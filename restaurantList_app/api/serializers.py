@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from restaurantList_app.models import Restaurant
+from restaurantList_app.models import Restaurant, Location
 
 class RestaurantSerializer(serializers.Serializer):
     id =  serializers.IntegerField(read_only=True)
@@ -17,3 +17,6 @@ class RestaurantSerializer(serializers.Serializer):
         instance.active      = validated_data.get('active', instance.active)
         instance.save()
         return instance
+    
+    
+    
